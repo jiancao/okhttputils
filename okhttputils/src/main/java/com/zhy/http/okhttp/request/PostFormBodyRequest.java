@@ -1,8 +1,6 @@
 package com.zhy.http.okhttp.request;
 
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.builder.PostFormBuilder;
-import com.zhy.http.okhttp.callback.Callback;
+import com.zhy.http.okhttp.builder.PostFormBodyBuilder;
 
 import java.io.UnsupportedEncodingException;
 import java.net.FileNameMap;
@@ -23,9 +21,9 @@ import okhttp3.RequestBody;
  */
 public class PostFormBodyRequest extends OkHttpRequest
 {
-    private List<PostFormBuilder.FileInput> files;
+    private List<PostFormBodyBuilder.FileInput> files;
 
-    public PostFormBodyRequest(String url, Object tag, Map<String, String> params, Map<String, String> headers, List<PostFormBuilder.FileInput> files, int id)
+    public PostFormBodyRequest(String url, Object tag, Map<String, String> params, Map<String, String> headers, List<PostFormBodyBuilder.FileInput> files, int id)
     {
         super(url, tag, params, headers,id);
         this.files = files;
@@ -48,7 +46,7 @@ public class PostFormBodyRequest extends OkHttpRequest
 
             for (int i = 0; i < files.size(); i++)
             {
-                PostFormBuilder.FileInput fileInput = files.get(i);
+                PostFormBodyBuilder.FileInput fileInput = files.get(i);
                 RequestBody fileBody = RequestBody.create(MediaType.parse(guessMimeType(fileInput.filename)), fileInput.file);
                 builder.addFormDataPart(fileInput.key, fileInput.filename, fileBody);
             }
