@@ -4,6 +4,7 @@ import com.zhy.http.okhttp.builder.GetBuilder;
 import com.zhy.http.okhttp.builder.HeadBuilder;
 import com.zhy.http.okhttp.builder.OtherRequestBuilder;
 import com.zhy.http.okhttp.builder.PostFileBuilder;
+import com.zhy.http.okhttp.builder.PostFormBodyBuilder;
 import com.zhy.http.okhttp.builder.PostFormBuilder;
 import com.zhy.http.okhttp.builder.PostStringBuilder;
 import com.zhy.http.okhttp.callback.Callback;
@@ -90,6 +91,10 @@ public class OkHttpUtils
     public static PostFormBuilder post()
     {
         return new PostFormBuilder();
+    }
+
+    public static PostFormBodyBuilder post2(){
+        return new PostFormBodyBuilder();
     }
 
     public static OtherRequestBuilder put()
