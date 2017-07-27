@@ -1,5 +1,7 @@
 # okhttp-utils
 
+添加拦截post请求参数 post2()
+
 >由于个人原因，现已停止维护。
 
 对okhttp的封装类，okhttp见：[https://github.com/square/okhttp](https://github.com/square/okhttp).
